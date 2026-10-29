@@ -3,7 +3,7 @@ PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
 Runtime:       PHP 8.4.27
 Configuration: C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml
 
-Time: 00:01.878, Memory: 8.00 MB
+Time: 00:01.842, Memory: 8.00 MB
 
 Escenarios Tienda (Tests\Aceptacion\EscenariosTienda)
  ✔ CP-09 [RF-05] Al cierre del día el reporte lista para resurtir los productos que quedaron en o bajo su mínimo

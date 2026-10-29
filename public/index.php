@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /*
- * Punto de entrada web. Todas las rutas que no son archivos de public/
- * llegan aquí (php -S sin router script) y las atiende App\Http\Api:
- * la interfaz en /, la API JSON en /api/... y /salud para el despliegue.
+ * Punto de entrada web. Todas las rutas llegan aquí (php -S sin router
+ * script) y las atiende App\Http\Api: la API JSON en /api/... y /salud
+ * para comprobar que el servidor responde.
  */
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -16,7 +16,7 @@ use App\RepositorioInventario;
 // Hora local de la tienda (Campeche) para las fechas de los movimientos.
 date_default_timezone_set(getenv('APP_ZONA_HORARIA') ?: 'America/Merida');
 
-$api = new Api(RepositorioInventario::desdeEntorno(), __DIR__ . '/app.html');
+$api = new Api(RepositorioInventario::desdeEntorno());
 
 $api->atender(
     $_SERVER['REQUEST_METHOD'] ?? 'GET',

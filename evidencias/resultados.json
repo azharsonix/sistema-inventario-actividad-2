@@ -1,6 +1,6 @@
 {
     "ronda": "Ronda 1 - ejecución inicial",
-    "fecha": "2026-10-28T19:32:09-06:00",
+    "fecha": "2026-10-28T20:01:34-06:00",
     "ambiente": {
         "Sistema operativo": "Windows NT 10.0",
         "PHP": "8.4.27",
@@ -12,7 +12,7 @@
         "aprobadas": 10,
         "noAprobadas": 0,
         "omitidas": 0,
-        "segundos": 3.736
+        "segundos": 3.697
     },
     "porTipo": [
         {
@@ -55,7 +55,7 @@
             "tipo": "Unitaria",
             "nombre": "Registrar producto con datos válidos normaliza el código y guarda la existencia inicial",
             "estado": "Aprobada",
-            "segundos": 0.005,
+            "segundos": 0.004,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\RegistroProductoTest::testRegistrarProductoValido"
         },
@@ -104,7 +104,7 @@
             "tipo": "Integración",
             "nombre": "Venta guardada en el archivo se conserva al volver a abrir el inventario",
             "estado": "Aprobada",
-            "segundos": 0.006,
+            "segundos": 0.007,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\VentaPersistidaTest::testVentaSeConserva"
         },
@@ -130,7 +130,7 @@
             "tipo": "Sistema",
             "nombre": "Registrar producto, consultarlo y venderlo por HTTP actualiza la existencia",
             "estado": "Aprobada",
-            "segundos": 0.93,
+            "segundos": 0.926,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testFlujoRegistroConsultaVenta"
         },
@@ -142,7 +142,7 @@
             "tipo": "Sistema",
             "nombre": "Ventas con cantidad cero, negativa o mayor a la existencia responden 422 y no cambian la existencia",
             "estado": "Aprobada",
-            "segundos": 0.92,
+            "segundos": 0.922,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testVentasInvalidas"
         },
@@ -154,7 +154,7 @@
             "tipo": "Aceptación",
             "nombre": "Al cierre del día el reporte lista para resurtir los productos que quedaron en o bajo su mínimo",
             "estado": "Aprobada",
-            "segundos": 0.936,
+            "segundos": 0.949,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testReporteDeResurtido"
         },
@@ -167,7 +167,7 @@
             "tipo": "Aceptación",
             "nombre": "Llega mercancía y se vende en mostrador: la consulta de existencias y el historial cuadran",
             "estado": "Aprobada",
-            "segundos": 0.938,
+            "segundos": 0.888,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testEntradaYVentaCuadran"
         }

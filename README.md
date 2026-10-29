@@ -4,6 +4,10 @@
 
 Práctica en equipo de la Universidad Tecnológica de Campeche: requisitos, plan, casos y ejecución de pruebas del sistema que registra productos, consulta existencias y actualiza cantidades con cada venta.
 
+## Entrega
+
+En `docs/`: documento con los 8 puntos de la práctica (Word y PDF) y diagramas editables (PowerPoint).
+
 ## Requisitos funcionales
 
 | ID | Requisito |
@@ -30,10 +34,8 @@ composer install
 composer test          # los 10 casos
 composer evidencia     # cuatro suites + reporte en evidencias/
 composer regresion     # inyecta DEF-01 y DEF-02 y comprueba que las pruebas los detectan
-php -S localhost:8000 -t public
+php -S localhost:8000 -t public   # API: /api/productos, /api/reporte, /salud
 ```
-
-En Windows: `ejecutar-pruebas.bat` y `regresion-defectos.bat`.
 
 ## Integración continua
 
