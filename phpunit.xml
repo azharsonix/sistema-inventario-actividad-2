@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/Soporte/bootstrap.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache">
+    <!-- Una suite por nivel de prueba; el CI las ejecuta en ese orden. -->
+    <testsuites>
+        <testsuite name="Unitarias">
+            <directory>tests/Unitarias</directory>
+        </testsuite>
+        <testsuite name="Integracion">
+            <directory>tests/Integracion</directory>
+        </testsuite>
+        <testsuite name="Sistema">
+            <directory>tests/Sistema</directory>
+        </testsuite>
+        <testsuite name="Aceptacion">
+            <directory>tests/Aceptacion</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>src</directory>
+        </include>
+    </source>
+</phpunit>

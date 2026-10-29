@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte de pruebas · Actividad 2</title>
+<style>
+  :root { --fondo:#f6f7f9; --papel:#fff; --texto:#1d2330; --tenue:#5d6575; --borde:#e2e5ea; --ok:#1f7a4d; --ok-f:#e3f4ea; --mal:#b42318; --mal-f:#fde8e6; }
+  @media (prefers-color-scheme: dark) { :root { --fondo:#14171c; --papel:#1c2027; --texto:#e8eaee; --tenue:#a0a7b4; --borde:#2d333d; --ok:#5fd39a; --ok-f:#173527; --mal:#ff8a7e; --mal-f:#3d1d1a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.5 system-ui, "Segoe UI", sans-serif; background:var(--fondo); color:var(--texto); }
+  main { max-width:1080px; margin:0 auto; padding:32px 16px 48px; }
+  h1 { margin:0 0 4px; font-size:24px; } .sub { color:var(--tenue); margin:0 0 24px; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:24px; }
+  .kpi { background:var(--papel); border:1px solid var(--borde); border-radius:10px; padding:14px 16px; }
+  .kpi b { display:block; font-size:28px; } .kpi span { color:var(--tenue); font-size:13px; }
+  .tabla { background:var(--papel); border:1px solid var(--borde); border-radius:10px; overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; min-width:720px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--borde); vertical-align:top; }
+  th { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--tenue); }
+  tr:last-child td { border-bottom:0; } .id { font-weight:600; white-space:nowrap; } .num { white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .estado { padding:2px 10px; border-radius:99px; font-size:13px; font-weight:600; white-space:nowrap; }
+  .ok { background:var(--ok-f); color:var(--ok); } .mal { background:var(--mal-f); color:var(--mal); }
+  .msg { margin-top:6px; font:12px/1.4 ui-monospace, Consolas, monospace; color:var(--mal); }
+  dl { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:8px 16px; margin:24px 0 0; }
+  dt { font-size:12px; color:var(--tenue); } dd { margin:0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Reporte de pruebas · Sistema de control de inventario</h1>
+  <p class="sub">Ronda 1 - ejecución inicial · 28/10/2026 19:32</p>
+  <section class="kpis">
+    <div class="kpi"><b>10</b><span>casos ejecutados</span></div>
+    <div class="kpi"><b style="color:var(--ok)">10</b><span>aprobados</span></div>
+    <div class="kpi"><b style="color:var(--mal)">0</b><span>no aprobados</span></div>
+    <div class="kpi"><b>3.736 s</b><span>tiempo total</span></div>
+  </section>
+  <div class="tabla"><table>
+    <thead><tr><th>ID</th><th>Tipo</th><th>Requisito</th><th>Caso</th><th>Estado</th><th>Tiempo</th></tr></thead>
+    <tbody><tr><td class="id">CP-01</td><td>Unitaria</td><td>RF-01</td><td>Registrar producto con datos válidos normaliza el código y guarda la existencia inicial</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.005 s</td></tr><tr><td class="id">CP-02</td><td>Unitaria</td><td>RF-01</td><td>Registrar producto con código duplicado muestra error y no agrega otro producto</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.000 s</td></tr><tr><td class="id">CP-03</td><td>Unitaria</td><td>RF-03</td><td>Venta con cantidad disponible descuenta la existencia y registra el movimiento</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.000 s</td></tr><tr><td class="id">CP-04</td><td>Unitaria</td><td>RF-03</td><td>Venta mayor a la existencia se rechaza y la existencia no cambia</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.000 s</td></tr><tr><td class="id">CP-05</td><td>Integración</td><td>RF-02, RF-03</td><td>Venta guardada en el archivo se conserva al volver a abrir el inventario</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.006 s</td></tr><tr><td class="id">CP-06</td><td>Integración</td><td>RF-03</td><td>Venta rechazada dentro de una actualización no modifica el archivo de datos</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.001 s</td></tr><tr><td class="id">CP-07</td><td>Sistema</td><td>RF-01, RF-02, RF-03</td><td>Registrar producto, consultarlo y venderlo por HTTP actualiza la existencia</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.930 s</td></tr><tr><td class="id">CP-08</td><td>Sistema</td><td>RF-03</td><td>Ventas con cantidad cero, negativa o mayor a la existencia responden 422 y no cambian la existencia</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.920 s</td></tr><tr><td class="id">CP-09</td><td>Aceptación</td><td>RF-05</td><td>Al cierre del día el reporte lista para resurtir los productos que quedaron en o bajo su mínimo</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.936 s</td></tr><tr><td class="id">CP-10</td><td>Aceptación</td><td>RF-02, RF-04</td><td>Llega mercancía y se vende en mostrador: la consulta de existencias y el historial cuadran</td><td><span class="estado ok">Aprobada</span></td><td class="num">0.938 s</td></tr></tbody>
+  </table></div>
+  <dl><div><dt>Sistema operativo</dt><dd>Windows NT 10.0</dd></div><div><dt>PHP</dt><dd>8.4.27</dd></div><div><dt>PHPUnit</dt><dd>11.5.56</dd></div><div><dt>Ejecutado en</dt><dd>Equipo local</dd></div></dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+name: Preparar PHP
+description: Instala PHP y las dependencias de Composer (con caché)
+
+inputs:
+  php-version:
+    description: Versión de PHP
+    default: "8.2"
+
+runs:
+  using: composite
+  steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ inputs.php-version }}
+        tools: composer:v2
+        coverage: none
+
+    - name: Caché de Composer
+      uses: actions/cache@v4
+      with:
+        path: ~/.composer/cache/files
+        key: composer-${{ runner.os }}-php${{ inputs.php-version }}-${{ hashFiles('composer.lock') }}
+        restore-keys: composer-${{ runner.os }}-php${{ inputs.php-version }}-
+
+    - name: Instalar dependencias
+      shell: bash
+      run: composer install --no-interaction --prefer-dist --no-progress

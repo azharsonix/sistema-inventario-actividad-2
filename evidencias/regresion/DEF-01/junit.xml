@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="10" assertions="37" errors="0" failures="3" skipped="0" time="3.679728">
+    <testsuite name="Unitarias" tests="4" assertions="12" errors="0" failures="1" skipped="0" time="0.013387">
+      <testsuite name="Tests\Unitarias\RegistroProductoTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.004769">
+        <testcase name="testRegistrarProductoValido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="18" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.004445"/>
+        <testcase name="testCodigoDuplicado" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="30" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.000324"/>
+      </testsuite>
+      <testsuite name="Tests\Unitarias\VentaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" tests="2" assertions="6" errors="0" failures="1" skipped="0" time="0.008618">
+        <testcase name="testVentaDescuentaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="27" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="5" time="0.000428"/>
+        <testcase name="testVentaMayorALaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="39" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="1" time="0.008191">
+          <failure type="PHPUnit\Framework\AssertionFailedError">Tests\Unitarias\VentaTest::testVentaMayorALaExistencia&#13;
+Se esperaba InventarioException por existencia insuficiente.
+&#13;
+C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php:43</failure>
+        </testcase>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Integracion" tests="2" assertions="4" errors="0" failures="1" skipped="0" time="0.002992">
+      <testsuite name="Tests\Integracion\VentaPersistidaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" tests="2" assertions="4" errors="0" failures="1" skipped="0" time="0.002992">
+        <testcase name="testVentaSeConserva" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="35" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="3" time="0.001432"/>
+        <testcase name="testVentaRechazadaNoGuarda" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="49" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="1" time="0.001559">
+          <failure type="PHPUnit\Framework\AssertionFailedError">Tests\Integracion\VentaPersistidaTest::testVentaRechazadaNoGuarda&#13;
+Se esperaba que la venta se rechazara.
+&#13;
+C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php:56</failure>
+        </testcase>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Sistema" tests="2" assertions="12" errors="0" failures="1" skipped="0" time="1.812369">
+      <testsuite name="Tests\Sistema\FlujoVentaHttpTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" tests="2" assertions="12" errors="0" failures="1" skipped="0" time="1.812369">
+        <testcase name="testFlujoRegistroConsultaVenta" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="32" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="7" time="0.893411"/>
+        <testcase name="testVentasInvalidas" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="54" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="5" time="0.918958">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Sistema\FlujoVentaHttpTest::testVentasInvalidas&#13;
+La venta de 11 unidades de LAP-001 (existencia 10) debía responder 422.
+Failed asserting that 201 is identical to 422.
+&#13;
+C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php:58</failure>
+        </testcase>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Aceptacion" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="1.850979">
+      <testsuite name="Tests\Aceptacion\EscenariosTiendaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="1.850979">
+        <testcase name="testReporteDeResurtido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="35" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="7" time="0.927585"/>
+        <testcase name="testEntradaYVentaCuadran" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="56" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="2" time="0.923394"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

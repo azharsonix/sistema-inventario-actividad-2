@@ -1,0 +1,148 @@
+# Integración continua del Sistema de Control de Inventario (Actividad 2).
+#
+# Cada push o Pull Request ejecuta las pruebas por niveles. Si un nivel falla,
+# los siguientes no corren y el PR no se puede integrar:
+#
+#   unitarias (PHP 8.2, 8.3, 8.4) ─► integracion ─► sistema ─► aceptacion ─► regresion-defectos
+#                                                                     └──────► reporte (siempre)
+#
+# Cada noche se repite la suite completa (regresión programada) aunque no haya cambios.
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop, "feature/**", "release/**", "hotfix/**"]
+  pull_request:
+    branches: [main, develop]
+  schedule:
+    - cron: "0 7 * * *" # 01:00 en Campeche (UTC-6)
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  unitarias:
+    name: Unitarias (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: true
+      matrix:
+        php: ["8.2", "8.3", "8.4"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/preparar-php
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: CP-01 a CP-04
+        run: php scripts/ejecutar-pruebas.php --suite=Unitarias
+
+      - uses: actions/upload-artifact@v4
+        if: always() && matrix.php == '8.2'
+        with:
+          name: junit-Unitarias
+          path: evidencias/junit-Unitarias.xml
+
+  integracion:
+    name: Integración
+    needs: unitarias
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/preparar-php
+
+      - name: CP-05 y CP-06
+        run: php scripts/ejecutar-pruebas.php --suite=Integracion
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: junit-Integracion
+          path: evidencias/junit-Integracion.xml
+
+  sistema:
+    name: Sistema (HTTP)
+    needs: integracion
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/preparar-php
+
+      - name: CP-07 y CP-08 contra el servidor en ejecución
+        run: php scripts/ejecutar-pruebas.php --suite=Sistema
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: junit-Sistema
+          path: evidencias/junit-Sistema.xml
+
+  aceptacion:
+    name: Aceptación
+    needs: sistema
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/preparar-php
+
+      - name: CP-09 y CP-10 (escenarios de la cliente)
+        run: php scripts/ejecutar-pruebas.php --suite=Aceptacion
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: junit-Aceptacion
+          path: evidencias/junit-Aceptacion.xml
+
+  regresion-defectos:
+    name: Regresión con DEF-01 y DEF-02 inyectados
+    needs: aceptacion
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/preparar-php
+
+      # Falla si alguna prueba dejó de detectar un defecto ya corregido.
+      - name: Inyectar defectos y comprobar que las pruebas los detectan
+        run: php scripts/simular-defectos.php
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regresion-defectos
+          path: evidencias/regresion/
+
+  reporte:
+    name: Reporte de resultados
+    needs: [unitarias, integracion, sistema, aceptacion]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/preparar-php
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: junit-*
+          path: evidencias
+          merge-multiple: true
+
+      - name: Consolidar resultados (resumen del job y reporte HTML)
+        run: php scripts/ejecutar-pruebas.php --solo-reporte --ronda="CI #${{ github.run_number }} (${{ github.event_name }})"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidencia-pruebas
+          path: evidencias/

@@ -1,0 +1,39 @@
+{
+    "name": "utcam/sistema-inventario-actividad-2",
+    "description": "Sistema de Control de Inventario - Actividad 2: plan, casos y ejecución de pruebas (UTCAM)",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --testdox",
+        "test:unitarias": "phpunit --testdox --testsuite Unitarias",
+        "test:integracion": "phpunit --testdox --testsuite Integracion",
+        "test:sistema": "phpunit --testdox --testsuite Sistema",
+        "test:aceptacion": "phpunit --testdox --testsuite Aceptacion",
+        "evidencia": "@php scripts/ejecutar-pruebas.php",
+        "regresion": "@php scripts/simular-defectos.php"
+    },
+    "scripts-descriptions": {
+        "test": "Ejecuta los 10 casos de prueba (CP-01 a CP-10)",
+        "evidencia": "Ejecuta las cuatro suites y genera la evidencia en evidencias/",
+        "regresion": "Inyecta DEF-01 y DEF-02 en una copia de src/ y comprueba que las pruebas los detectan"
+    },
+    "config": {
+        "process-timeout": 0
+    }
+}

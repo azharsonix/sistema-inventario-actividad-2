@@ -1,0 +1,66 @@
+{
+    "fecha": "2026-10-28T19:32:13-06:00",
+    "ambiente": {
+        "Sistema operativo": "Windows NT 10.0",
+        "PHP": "8.4.27",
+        "PHPUnit": "11.5.56",
+        "Ejecutado en": "Equipo local"
+    },
+    "defectos": [
+        {
+            "id": "DEF-01",
+            "titulo": "La venta permite vender más unidades de las que hay y deja la existencia negativa",
+            "prioridad": "Alta",
+            "cambio": "src/Inventario.php: `if ($cantidad > $producto->existencia) {` → `if (false && $cantidad > $producto->existencia) {`",
+            "casosEsperados": [
+                "CP-04",
+                "CP-06",
+                "CP-08"
+            ],
+            "casosFallidos": [
+                "CP-04",
+                "CP-06",
+                "CP-08"
+            ],
+            "mensajes": [
+                {
+                    "id": "CP-04",
+                    "mensaje": "Se esperaba InventarioException por existencia insuficiente."
+                },
+                {
+                    "id": "CP-06",
+                    "mensaje": "Se esperaba que la venta se rechazara."
+                },
+                {
+                    "id": "CP-08",
+                    "mensaje": "La venta de 11 unidades de LAP-001 (existencia 10) debía responder 422."
+                }
+            ],
+            "detectado": true
+        },
+        {
+            "id": "DEF-02",
+            "titulo": "El reporte no marca para resurtir un producto cuya existencia es igual a su stock mínimo",
+            "prioridad": "Media",
+            "cambio": "src/Producto.php: `return $this->existencia <= $this->stockMinimo;` → `return $this->existencia < $this->stockMinimo;`",
+            "casosEsperados": [
+                "CP-09"
+            ],
+            "casosFallidos": [
+                "CP-09"
+            ],
+            "mensajes": [
+                {
+                    "id": "CP-09",
+                    "mensaje": "Productos a resurtir: se esperaban ACC-002 (5 de mínimo 5) y RED-001 (4 de mínimo 4)."
+                }
+            ],
+            "detectado": true
+        }
+    ],
+    "corregido": {
+        "total": 10,
+        "aprobadas": 10
+    },
+    "resultado": "Las pruebas detectan los dos defectos y pasan con el código corregido"
+}
