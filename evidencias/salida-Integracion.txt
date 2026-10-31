@@ -3,7 +3,7 @@ PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
 Runtime:       PHP 8.4.27
 Configuration: C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml
 
-Time: 00:00.029, Memory: 8.00 MB
+Time: 00:00.020, Memory: 8.00 MB
 
 Consulta Persistida (Tests\Integracion\ConsultaPersistida)
  ✔ CP-14 [RF-02] Consultar un producto existente leído del archivo devuelve sus datos y su existencia sin modificar el archivo

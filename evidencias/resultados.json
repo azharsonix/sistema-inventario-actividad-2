@@ -1,6 +1,6 @@
 {
-    "ronda": "Ejecución 2026-10-31 15:18",
-    "fecha": "2026-10-31T15:18:41-06:00",
+    "ronda": "Ejecución 2026-10-31 15:21",
+    "fecha": "2026-10-31T15:21:23-06:00",
     "ambiente": {
         "Sistema operativo": "Windows NT 10.0",
         "PHP": "8.4.27",
@@ -12,7 +12,7 @@
         "aprobadas": 15,
         "noAprobadas": 0,
         "omitidas": 0,
-        "segundos": 5.304
+        "segundos": 5.257
     },
     "porTipo": [
         {
@@ -60,7 +60,7 @@
             "tipo": "Unitaria",
             "nombre": "Registrar producto con datos válidos normaliza el código y guarda la existencia inicial",
             "estado": "Aprobada",
-            "segundos": 0.007,
+            "segundos": 0.005,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\RegistroProductoTest::testRegistrarProductoValido"
         },
@@ -72,7 +72,7 @@
             "tipo": "Unitaria",
             "nombre": "Registrar producto con código duplicado muestra error y no agrega otro producto",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\RegistroProductoTest::testCodigoDuplicado"
         },
@@ -84,7 +84,7 @@
             "tipo": "Unitaria",
             "nombre": "Venta con cantidad disponible descuenta la existencia y registra el movimiento",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\VentaTest::testVentaDescuentaExistencia"
         },
@@ -96,7 +96,7 @@
             "tipo": "Unitaria",
             "nombre": "Venta mayor a la existencia se rechaza y la existencia no cambia",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\VentaTest::testVentaMayorALaExistencia"
         },
@@ -121,7 +121,7 @@
             "tipo": "Integración",
             "nombre": "Venta rechazada dentro de una actualización no modifica el archivo de datos",
             "estado": "Aprobada",
-            "segundos": 0.004,
+            "segundos": 0.001,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\VentaPersistidaTest::testVentaRechazadaNoGuarda"
         },
@@ -135,7 +135,7 @@
             "tipo": "Sistema",
             "nombre": "Registrar producto, consultarlo y venderlo por HTTP actualiza la existencia",
             "estado": "Aprobada",
-            "segundos": 0.859,
+            "segundos": 0.855,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testFlujoRegistroConsultaVenta"
         },
@@ -147,7 +147,7 @@
             "tipo": "Sistema",
             "nombre": "Ventas con cantidad cero, negativa o mayor a la existencia responden 422 y no cambian la existencia",
             "estado": "Aprobada",
-            "segundos": 0.892,
+            "segundos": 0.897,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testVentasInvalidas"
         },
@@ -159,7 +159,7 @@
             "tipo": "Aceptación",
             "nombre": "Al cierre del día el reporte lista para resurtir los productos que quedaron en o bajo su mínimo",
             "estado": "Aprobada",
-            "segundos": 0.894,
+            "segundos": 0.875,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testReporteDeResurtido"
         },
@@ -172,7 +172,7 @@
             "tipo": "Aceptación",
             "nombre": "Llega mercancía y se vende en mostrador: la consulta de existencias y el historial cuadran",
             "estado": "Aprobada",
-            "segundos": 0.858,
+            "segundos": 0.857,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testEntradaYVentaCuadran"
         },
@@ -184,7 +184,7 @@
             "tipo": "Sistema",
             "nombre": "Consultar un producto que no existe responde 404 con mensaje claro y no cambia el inventario",
             "estado": "Aprobada",
-            "segundos": 0.891,
+            "segundos": 0.874,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\ConsultaHttpTest::testProductoInexistente"
         },
@@ -208,7 +208,7 @@
             "tipo": "Integración",
             "nombre": "Entrada de mercancía guardada en el archivo suma la existencia y queda en el historial",
             "estado": "Aprobada",
-            "segundos": 0.002,
+            "segundos": 0.003,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\EntradaPersistidaTest::testEntradaSeConserva"
         },
@@ -236,7 +236,7 @@
             "tipo": "Aceptación",
             "nombre": "Proceso completo: alta, consulta, entrada, venta y reporte de resurtido de un producto nuevo",
             "estado": "Aprobada",
-            "segundos": 0.884,
+            "segundos": 0.88,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testProcesoCompleto"
         }
