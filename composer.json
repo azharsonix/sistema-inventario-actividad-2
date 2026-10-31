@@ -29,7 +29,7 @@
         "regresion": "@php scripts/simular-defectos.php"
     },
     "scripts-descriptions": {
-        "test": "Ejecuta los 10 casos de prueba (CP-01 a CP-10)",
+        "test": "Ejecuta los 13 casos de prueba (CP-01 a CP-13)",
         "evidencia": "Ejecuta las cuatro suites y genera la evidencia en evidencias/",
         "regresion": "Inyecta DEF-01 y DEF-02 en una copia de src/ y comprueba que las pruebas los detectan"
     },
