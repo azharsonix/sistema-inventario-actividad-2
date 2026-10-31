@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.737951">
-    <testsuite name="Sistema" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.737951">
-      <testsuite name="Tests\Sistema\FlujoVentaHttpTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.737951">
-        <testcase name="testFlujoRegistroConsultaVenta" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="32" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="7" time="0.877230"/>
-        <testcase name="testVentasInvalidas" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="54" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="8" time="0.860720"/>
+  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.753882">
+    <testsuite name="Sistema" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.753882">
+      <testsuite name="Tests\Sistema\FlujoVentaHttpTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.753882">
+        <testcase name="testFlujoRegistroConsultaVenta" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="32" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="7" time="0.888771"/>
+        <testcase name="testVentasInvalidas" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="54" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="8" time="0.865111"/>
       </testsuite>
     </testsuite>
   </testsuite>
