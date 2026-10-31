@@ -9,7 +9,7 @@ Práctica en equipo de la Universidad Tecnológica de Campeche: requisitos, plan
 En `docs/`:
 
 - Primera parte: documento con los 8 puntos de la práctica (Word y PDF) y diagramas editables (PowerPoint).
-- Segunda parte: documento técnico con la estructura vista en clase (portada, introducción, puntos 1 a 8, conclusiones y anexos), bitácora de ejecución y porcentaje de aprobación por ronda (Word y PDF).
+- `docs/Segunda parte/`: documento técnico con la estructura vista en clase (portada, introducción, puntos 1 a 8, conclusiones y anexos), bitácora de ejecución y porcentaje de aprobación por ronda (Word y PDF).
 
 ## Requisitos funcionales
 
