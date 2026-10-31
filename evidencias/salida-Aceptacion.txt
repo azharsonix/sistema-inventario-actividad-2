@@ -3,10 +3,11 @@ PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
 Runtime:       PHP 8.4.27
 Configuration: C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml
 
-Time: 00:01.759, Memory: 8.00 MB
+Time: 00:02.617, Memory: 8.00 MB
 
 Escenarios Tienda (Tests\Aceptacion\EscenariosTienda)
  ✔ CP-09 [RF-05] Al cierre del día el reporte lista para resurtir los productos que quedaron en o bajo su mínimo
  ✔ CP-10 [RF-02, RF-04] Llega mercancía y se vende en mostrador: la consulta de existencias y el historial cuadran
+ ✔ CP-15 [RF-01, RF-02, RF-03, RF-04, RF-05] Proceso completo: alta, consulta, entrada, venta y reporte de resurtido de un producto nuevo
 
-OK (2 tests, 9 assertions)
+OK (3 tests, 23 assertions)

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="1.752440">
-    <testsuite name="Aceptacion" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="1.752440">
-      <testsuite name="Tests\Aceptacion\EscenariosTiendaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="1.752440">
-        <testcase name="testReporteDeResurtido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="35" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="7" time="0.879962"/>
-        <testcase name="testEntradaYVentaCuadran" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="56" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="2" time="0.872478"/>
+  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="3" assertions="23" errors="0" failures="0" skipped="0" time="2.611808">
+    <testsuite name="Aceptacion" tests="3" assertions="23" errors="0" failures="0" skipped="0" time="2.611808">
+      <testsuite name="Tests\Aceptacion\EscenariosTiendaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" tests="3" assertions="23" errors="0" failures="0" skipped="0" time="2.611808">
+        <testcase name="testReporteDeResurtido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="35" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="7" time="0.875254"/>
+        <testcase name="testEntradaYVentaCuadran" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="56" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="2" time="0.856574"/>
+        <testcase name="testProcesoCompleto" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="77" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="14" time="0.879979"/>
       </testsuite>
     </testsuite>
   </testsuite>

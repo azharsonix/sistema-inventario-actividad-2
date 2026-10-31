@@ -3,10 +3,16 @@ PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
 Runtime:       PHP 8.4.27
 Configuration: C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml
 
-Time: 00:00.016, Memory: 8.00 MB
+Time: 00:00.020, Memory: 8.00 MB
+
+Consulta Persistida (Tests\Integracion\ConsultaPersistida)
+ ✔ CP-14 [RF-02] Consultar un producto existente leído del archivo devuelve sus datos y su existencia sin modificar el archivo
+
+Entrada Persistida (Tests\Integracion\EntradaPersistida)
+ ✔ CP-13 [RF-04] Entrada de mercancía guardada en el archivo suma la existencia y queda en el historial
 
 Venta Persistida (Tests\Integracion\VentaPersistida)
  ✔ CP-05 [RF-02, RF-03] Venta guardada en el archivo se conserva al volver a abrir el inventario
  ✔ CP-06 [RF-03] Venta rechazada dentro de una actualización no modifica el archivo de datos
 
-OK (2 tests, 5 assertions)
+OK (4 tests, 19 assertions)
