@@ -1,0 +1,181 @@
+/*
+ * TecnoStock · Tokens de Material Design 3
+ * Esquema generado desde el color semilla #0061A4 (azul tecnológico)
+ * con terciario cian/turquesa. Cada token define su valor claro y oscuro
+ * con light-dark(); el tema efectivo lo decide `color-scheme`:
+ *   - sin atributo  -> sigue a prefers-color-scheme del sistema
+ *   - data-theme="light" | "dark" -> preferencia guardada por el usuario
+ */
+
+:root {
+  color-scheme: light dark;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
+
+:root {
+  /* ---------- Color: primario (azul #0061A4) ---------- */
+  --md-sys-color-primary:                light-dark(#0061A4, #9ECAFF);
+  --md-sys-color-on-primary:             light-dark(#FFFFFF, #003258);
+  --md-sys-color-primary-container:      light-dark(#D1E4FF, #00497D);
+  --md-sys-color-on-primary-container:   light-dark(#001D36, #D1E4FF);
+  --md-sys-color-primary-fixed:          #D1E4FF;
+  --md-sys-color-on-primary-fixed:       #001D36;
+  --md-sys-color-inverse-primary:        light-dark(#9ECAFF, #0061A4);
+
+  /* ---------- Color: secundario (azul grisáceo) ---------- */
+  --md-sys-color-secondary:              light-dark(#535F70, #BBC7DB);
+  --md-sys-color-on-secondary:           light-dark(#FFFFFF, #253140);
+  --md-sys-color-secondary-container:    light-dark(#D7E3F7, #3B4858);
+  --md-sys-color-on-secondary-container: light-dark(#101C2B, #D7E3F7);
+
+  /* ---------- Color: terciario (cian / turquesa) ---------- */
+  --md-sys-color-tertiary:               light-dark(#00687A, #54D7F3);
+  --md-sys-color-on-tertiary:            light-dark(#FFFFFF, #003640);
+  --md-sys-color-tertiary-container:     light-dark(#ACEDFF, #004E5C);
+  --md-sys-color-on-tertiary-container:  light-dark(#001F26, #ACEDFF);
+
+  /* ---------- Color: error ---------- */
+  --md-sys-color-error:                  light-dark(#BA1A1A, #FFB4AB);
+  --md-sys-color-on-error:               light-dark(#FFFFFF, #690005);
+  --md-sys-color-error-container:        light-dark(#FFDAD6, #93000A);
+  --md-sys-color-on-error-container:     light-dark(#410002, #FFDAD6);
+
+  /* ---------- Superficies (elevación tonal) ---------- */
+  --md-sys-color-background:                light-dark(#F8F9FF, #111418);
+  --md-sys-color-on-background:             light-dark(#191C20, #E1E2E8);
+  --md-sys-color-surface:                   light-dark(#F8F9FF, #111418);
+  --md-sys-color-surface-dim:               light-dark(#D8DAE0, #111418);
+  --md-sys-color-surface-bright:            light-dark(#F8F9FF, #37393E);
+  --md-sys-color-surface-container-lowest:  light-dark(#FFFFFF, #0C0E13);
+  --md-sys-color-surface-container-low:     light-dark(#F2F3FA, #191C20);
+  --md-sys-color-surface-container:         light-dark(#ECEEF4, #1D2024);
+  --md-sys-color-surface-container-high:    light-dark(#E6E8EE, #282A2F);
+  --md-sys-color-surface-container-highest: light-dark(#E0E2E8, #32353A);
+  --md-sys-color-surface-variant:           light-dark(#DFE2EB, #43474E);
+  --md-sys-color-surface-tint:              var(--md-sys-color-primary);
+  --md-sys-color-on-surface:                light-dark(#191C20, #E1E2E8);
+  --md-sys-color-on-surface-variant:        light-dark(#42474E, #C3C7CF);
+  --md-sys-color-outline:                   light-dark(#73777F, #8D9199);
+  --md-sys-color-outline-variant:           light-dark(#C3C7CF, #43474E);
+  --md-sys-color-inverse-surface:           light-dark(#2E3135, #E1E2E8);
+  --md-sys-color-inverse-on-surface:        light-dark(#EFF0F7, #2E3135);
+  --md-sys-color-scrim:                     #000000;
+  --md-sys-color-shadow:                    #000000;
+
+  /* ---------- Colores extendidos (custom colors armonizados) ---------- */
+  /* Éxito: entradas de mercancía, stock correcto */
+  --app-color-success:                light-dark(#1B6D2F, #88D98E);
+  --app-color-on-success:             light-dark(#FFFFFF, #003914);
+  --app-color-success-container:      light-dark(#A3F5A8, #005320);
+  --app-color-on-success-container:   light-dark(#002109, #A3F5A8);
+  /* Advertencia: salidas de mercancía */
+  --app-color-warning:                light-dark(#7C5800, #F6BE48);
+  --app-color-on-warning:             light-dark(#FFFFFF, #412D00);
+  --app-color-warning-container:      light-dark(#FFDEA6, #5E4200);
+  --app-color-on-warning-container:   light-dark(#271900, #FFDEA6);
+
+  /* ---------- Tipografía ---------- */
+  --md-ref-typeface-brand: "Roboto Flex", "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --md-ref-typeface-plain: "Roboto Flex", "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --md-ref-typeface-mono: ui-monospace, "Cascadia Mono", "Roboto Mono", Consolas, "Liberation Mono", monospace;
+
+  /* font: <peso> <tamaño>/<interlineado> <familia>  ·  tracking aparte */
+  --md-sys-typescale-display-large:   400 3.5625rem/4rem var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-large-tracking: -0.015625rem;
+  --md-sys-typescale-display-medium:  400 2.8125rem/3.25rem var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-medium-tracking: 0;
+  --md-sys-typescale-display-small:   400 2.25rem/2.75rem var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-small-tracking: 0;
+  --md-sys-typescale-headline-large:  400 2rem/2.5rem var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-large-tracking: 0;
+  --md-sys-typescale-headline-medium: 400 1.75rem/2.25rem var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-medium-tracking: 0;
+  --md-sys-typescale-headline-small:  400 1.5rem/2rem var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-small-tracking: 0;
+  --md-sys-typescale-title-large:     400 1.375rem/1.75rem var(--md-ref-typeface-brand);
+  --md-sys-typescale-title-large-tracking: 0;
+  --md-sys-typescale-title-medium:    500 1rem/1.5rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-medium-tracking: 0.009375rem;
+  --md-sys-typescale-title-small:     500 0.875rem/1.25rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-small-tracking: 0.00625rem;
+  --md-sys-typescale-body-large:      400 1rem/1.5rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-large-tracking: 0.03125rem;
+  --md-sys-typescale-body-medium:     400 0.875rem/1.25rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-medium-tracking: 0.015625rem;
+  --md-sys-typescale-body-small:      400 0.75rem/1rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-small-tracking: 0.025rem;
+  --md-sys-typescale-label-large:     500 0.875rem/1.25rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-large-tracking: 0.00625rem;
+  --md-sys-typescale-label-medium:    500 0.75rem/1rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-medium-tracking: 0.03125rem;
+  --md-sys-typescale-label-small:     500 0.6875rem/1rem var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-small-tracking: 0.03125rem;
+
+  /* ---------- Formas ---------- */
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* ---------- Elevación (sombras; las superficies usan tonos) ---------- */
+  --md-sys-elevation-level0: none;
+  --md-sys-elevation-level1: 0 1px 2px 0 rgb(0 0 0 / .30), 0 1px 3px 1px rgb(0 0 0 / .15);
+  --md-sys-elevation-level2: 0 1px 2px 0 rgb(0 0 0 / .30), 0 2px 6px 2px rgb(0 0 0 / .15);
+  --md-sys-elevation-level3: 0 1px 3px 0 rgb(0 0 0 / .30), 0 4px 8px 3px rgb(0 0 0 / .15);
+  --md-sys-elevation-level4: 0 2px 3px 0 rgb(0 0 0 / .30), 0 6px 10px 4px rgb(0 0 0 / .15);
+
+  /* ---------- Estados (state layers) ---------- */
+  --md-sys-state-hover-state-layer-opacity: .08;
+  --md-sys-state-focus-state-layer-opacity: .10;
+  --md-sys-state-pressed-state-layer-opacity: .10;
+  --md-sys-state-dragged-state-layer-opacity: .16;
+
+  /* ---------- Movimiento ---------- */
+  --md-sys-motion-easing-standard: cubic-bezier(.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(.05, .7, .1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(.3, 0, .8, .15);
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short4: 200ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-medium4: 400ms;
+  --md-sys-motion-duration-long2: 500ms;
+
+  /* ---------- Layout ---------- */
+  --app-rail-width: 80px;
+  --app-navbar-height: 80px;
+  --app-topbar-height: 64px;
+  --app-content-max: 1280px;
+  --app-gutter: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --md-sys-motion-duration-short2: 0ms;
+    --md-sys-motion-duration-short4: 0ms;
+    --md-sys-motion-duration-medium2: 0ms;
+    --md-sys-motion-duration-medium4: 0ms;
+    --md-sys-motion-duration-long2: 0ms;
+  }
+}
+
+/* ---------- Clases de la escala tipográfica ---------- */
+.md-typescale-display-large   { font: var(--md-sys-typescale-display-large);   letter-spacing: var(--md-sys-typescale-display-large-tracking); }
+.md-typescale-display-medium  { font: var(--md-sys-typescale-display-medium);  letter-spacing: var(--md-sys-typescale-display-medium-tracking); }
+.md-typescale-display-small   { font: var(--md-sys-typescale-display-small);   letter-spacing: var(--md-sys-typescale-display-small-tracking); }
+.md-typescale-headline-large  { font: var(--md-sys-typescale-headline-large);  letter-spacing: var(--md-sys-typescale-headline-large-tracking); }
+.md-typescale-headline-medium { font: var(--md-sys-typescale-headline-medium); letter-spacing: var(--md-sys-typescale-headline-medium-tracking); }
+.md-typescale-headline-small  { font: var(--md-sys-typescale-headline-small);  letter-spacing: var(--md-sys-typescale-headline-small-tracking); }
+.md-typescale-title-large     { font: var(--md-sys-typescale-title-large);     letter-spacing: var(--md-sys-typescale-title-large-tracking); }
+.md-typescale-title-medium    { font: var(--md-sys-typescale-title-medium);    letter-spacing: var(--md-sys-typescale-title-medium-tracking); }
+.md-typescale-title-small     { font: var(--md-sys-typescale-title-small);     letter-spacing: var(--md-sys-typescale-title-small-tracking); }
+.md-typescale-body-large      { font: var(--md-sys-typescale-body-large);      letter-spacing: var(--md-sys-typescale-body-large-tracking); }
+.md-typescale-body-medium     { font: var(--md-sys-typescale-body-medium);     letter-spacing: var(--md-sys-typescale-body-medium-tracking); }
+.md-typescale-body-small      { font: var(--md-sys-typescale-body-small);      letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+.md-typescale-label-large     { font: var(--md-sys-typescale-label-large);     letter-spacing: var(--md-sys-typescale-label-large-tracking); }
+.md-typescale-label-medium    { font: var(--md-sys-typescale-label-medium);    letter-spacing: var(--md-sys-typescale-label-medium-tracking); }
+.md-typescale-label-small     { font: var(--md-sys-typescale-label-small);     letter-spacing: var(--md-sys-typescale-label-small-tracking); }

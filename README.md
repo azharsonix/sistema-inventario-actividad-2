@@ -37,7 +37,7 @@ composer install
 composer test          # los 15 casos
 composer evidencia     # cuatro suites + reporte en evidencias/
 composer regresion     # inyecta DEF-01 y DEF-02 y comprueba que las pruebas los detectan
-php -S localhost:8000 -t public   # API: /api/productos, /api/reporte, /salud
+php -S localhost:8000 -t public   # interfaz web en http://localhost:8000/ y API en /api/productos, /api/reporte, /salud
 ```
 
 ## Integración continua
