@@ -3,7 +3,7 @@ PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
 Runtime:       PHP 8.4.27
 Configuration: C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml
 
-Time: 00:00.009, Memory: 8.00 MB
+Time: 00:00.023, Memory: 8.00 MB
 
 Registro Producto (Tests\Unitarias\RegistroProducto)
  ✔ CP-01 [RF-01] Registrar producto con datos válidos normaliza el código y guarda la existencia inicial

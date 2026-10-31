@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.007588">
-    <testsuite name="Integracion" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.007588">
-      <testsuite name="Tests\Integracion\VentaPersistidaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.007588">
-        <testcase name="testVentaSeConserva" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="35" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="3" time="0.006566"/>
-        <testcase name="testVentaRechazadaNoGuarda" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="49" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="2" time="0.001023"/>
+  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.014011">
+    <testsuite name="Integracion" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.014011">
+      <testsuite name="Tests\Integracion\VentaPersistidaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.014011">
+        <testcase name="testVentaSeConserva" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="35" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="3" time="0.011518"/>
+        <testcase name="testVentaRechazadaNoGuarda" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="49" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="2" time="0.002493"/>
       </testsuite>
     </testsuite>
   </testsuite>
