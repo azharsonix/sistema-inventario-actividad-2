@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TecnoStock · Inventario</title>
+  <meta name="description" content="TecnoStock: sistema de control de inventario para tiendas de cómputo.">
+  <meta name="theme-color" content="#F8F9FF" id="meta-tema">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografía: Roboto Flex y Material Symbols Outlined (con respaldo system-ui si no hay internet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300..800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=block">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/print.css" media="print">
+
+  <script>
+    /* Aplica el tema guardado antes de pintar para evitar parpadeos. */
+    try {
+      var t = localStorage.getItem('tecnostock-tema');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) { /* almacenamiento no disponible */ }
+  </script>
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body>
+  <!-- Logotipo TecnoStock: chip con una caja isométrica (se adapta al tema) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="logo-tecnostock" viewBox="0 0 48 48">
+      <g style="fill: var(--md-sys-color-primary)">
+        <rect x="1" y="15.5" width="7" height="3" rx="1.5"/><rect x="1" y="22.5" width="7" height="3" rx="1.5"/><rect x="1" y="29.5" width="7" height="3" rx="1.5"/>
+        <rect x="40" y="15.5" width="7" height="3" rx="1.5"/><rect x="40" y="22.5" width="7" height="3" rx="1.5"/><rect x="40" y="29.5" width="7" height="3" rx="1.5"/>
+        <rect x="15.5" y="1" width="3" height="7" rx="1.5"/><rect x="22.5" y="1" width="3" height="7" rx="1.5"/><rect x="29.5" y="1" width="3" height="7" rx="1.5"/>
+        <rect x="15.5" y="40" width="3" height="7" rx="1.5"/><rect x="22.5" y="40" width="3" height="7" rx="1.5"/><rect x="29.5" y="40" width="3" height="7" rx="1.5"/>
+        <rect x="6" y="6" width="36" height="36" rx="10"/>
+      </g>
+      <path d="M24 13.5 34 19 24 24.5 14 19Z" style="fill: var(--md-sys-color-tertiary-container)"/>
+      <path d="M14 19 24 24.5V35.5L14 30Z" style="fill: var(--md-sys-color-on-primary)"/>
+      <path d="M34 19 24 24.5V35.5L34 30Z" style="fill: var(--md-sys-color-on-primary); fill-opacity: .62"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <nav class="nav" aria-label="Navegación principal">
+    <a class="nav__brand" href="#/panel" aria-label="TecnoStock: ir al panel">
+      <svg class="logo" aria-hidden="true"><use href="#logo-tecnostock"/></svg>
+    </a>
+    <ul class="nav__list" role="list">
+      <li>
+        <a class="nav__item" href="#/panel" data-ruta="panel">
+          <span class="nav__indicator"><span class="icon" aria-hidden="true">space_dashboard</span></span>
+          <span class="nav__label">Panel</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav__item" href="#/productos" data-ruta="productos">
+          <span class="nav__indicator">
+            <span class="nav__icon-wrap">
+              <span class="icon" aria-hidden="true">inventory_2</span>
+              <span class="badge nav__badge" id="insignia-resurtir" hidden></span>
+            </span>
+          </span>
+          <span class="nav__label">Productos</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav__item" href="#/movimientos" data-ruta="movimientos">
+          <span class="nav__indicator"><span class="icon" aria-hidden="true">swap_vert</span></span>
+          <span class="nav__label">Movimientos</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav__item" href="#/reporte" data-ruta="reporte">
+          <span class="nav__indicator"><span class="icon" aria-hidden="true">bar_chart</span></span>
+          <span class="nav__label">Reporte</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="app">
+    <header class="top-bar" id="top-bar">
+      <a class="top-bar__brand" href="#/panel" aria-label="TecnoStock, inventario para tiendas de cómputo: ir al panel">
+        <svg class="logo top-bar__logo" aria-hidden="true"><use href="#logo-tecnostock"/></svg>
+        <span class="top-bar__brand-text" aria-hidden="true">
+          <span class="wordmark">Tecno<b>Stock</b></span>
+          <span class="top-bar__tagline">Inventario para tiendas de cómputo</span>
+        </span>
+      </a>
+      <div class="top-bar__actions">
+        <button class="icon-btn" type="button" id="btn-actualizar" aria-label="Actualizar datos" title="Actualizar datos">
+          <span class="icon" aria-hidden="true">refresh</span>
+        </button>
+        <button class="icon-btn" type="button" id="btn-tema" aria-label="Activar tema oscuro" title="Activar tema oscuro">
+          <span class="icon" aria-hidden="true">dark_mode</span>
+        </button>
+      </div>
+      <div class="progress progress--indeterminate top-bar__progress" id="progreso-global" role="progressbar" aria-label="Cargando datos" hidden></div>
+    </header>
+
+    <main class="contenido" id="contenido" tabindex="-1" aria-live="off"></main>
+  </div>
+
+  <button class="fab fab--flotante" type="button" id="fab-nuevo" hidden>
+    <span class="icon" aria-hidden="true">add</span>
+    <span class="fab__label">Nuevo producto</span>
+  </button>
+
+  <!-- ===== Diálogo: alta / edición de producto ===== -->
+  <dialog class="dialog" id="dlg-producto" aria-labelledby="dlg-producto-titulo">
+    <form class="dialog__form" id="form-producto" novalidate>
+      <div class="dialog__header">
+        <span class="icon dialog__icon" aria-hidden="true" id="dlg-producto-icono">add_box</span>
+        <h2 class="dialog__headline" id="dlg-producto-titulo">Nuevo producto</h2>
+      </div>
+      <div class="dialog__content">
+        <div class="resumen-producto" id="producto-resumen" hidden></div>
+        <div class="banner banner--error" id="producto-error" role="alert" hidden>
+          <span class="icon" aria-hidden="true">error</span><span class="banner__texto"></span>
+        </div>
+        <div class="form-grid">
+          <div class="field" data-field="codigo">
+            <div class="field__box">
+              <input class="field__input" id="f-codigo" name="codigo" type="text" placeholder=" " maxlength="20"
+                     autocomplete="off" autocapitalize="characters" spellcheck="false" required
+                     aria-describedby="f-codigo-ayuda">
+              <label class="field__label" for="f-codigo">Código *</label>
+            </div>
+            <p class="field__support" id="f-codigo-ayuda" data-ayuda="3 a 20 caracteres: A-Z, 0-9 o guion">3 a 20 caracteres: A-Z, 0-9 o guion</p>
+          </div>
+          <div class="field" data-field="categoria">
+            <div class="field__box">
+              <input class="field__input" id="f-categoria" name="categoria" type="text" placeholder=" " maxlength="60"
+                     autocomplete="off" list="lista-categorias" required aria-describedby="f-categoria-ayuda">
+              <label class="field__label" for="f-categoria">Categoría *</label>
+            </div>
+            <p class="field__support" id="f-categoria-ayuda" data-ayuda="Elige una existente o escribe una nueva">Elige una existente o escribe una nueva</p>
+            <datalist id="lista-categorias"></datalist>
+          </div>
+          <div class="field span-2" data-field="nombre">
+            <div class="field__box">
+              <input class="field__input" id="f-nombre" name="nombre" type="text" placeholder=" " maxlength="120"
+                     autocomplete="off" required aria-describedby="f-nombre-ayuda">
+              <label class="field__label" for="f-nombre">Nombre del producto *</label>
+            </div>
+            <p class="field__support" id="f-nombre-ayuda" data-ayuda="Ejemplo: Laptop Lenovo IdeaPad 15&quot;">Ejemplo: Laptop Lenovo IdeaPad 15"</p>
+          </div>
+          <div class="field" data-field="precio">
+            <div class="field__box">
+              <input class="field__input" id="f-precio" name="precio" type="number" inputmode="decimal" min="0" step="0.01"
+                     placeholder=" " required aria-describedby="f-precio-ayuda">
+              <label class="field__label" for="f-precio">Precio (MXN) *</label>
+            </div>
+            <p class="field__support" id="f-precio-ayuda" data-ayuda="Precio unitario, 0 o mayor">Precio unitario, 0 o mayor</p>
+          </div>
+          <div class="field" data-field="stockMinimo">
+            <div class="field__box">
+              <input class="field__input" id="f-stockMinimo" name="stockMinimo" type="number" inputmode="numeric" min="0" step="1"
+                     placeholder=" " aria-describedby="f-stockMinimo-ayuda">
+              <label class="field__label" for="f-stockMinimo">Stock mínimo</label>
+            </div>
+            <p class="field__support" id="f-stockMinimo-ayuda" data-ayuda="Aviso de resurtido; 0 si se omite">Aviso de resurtido; 0 si se omite</p>
+          </div>
+          <div class="field" data-field="existencia">
+            <div class="field__box">
+              <input class="field__input" id="f-existencia" name="existencia" type="number" inputmode="numeric" min="0" step="1"
+                     placeholder=" " aria-describedby="f-existencia-ayuda">
+              <label class="field__label" for="f-existencia">Existencia inicial</label>
+            </div>
+            <p class="field__support" id="f-existencia-ayuda" data-ayuda="Piezas en almacén; 0 si se omite">Piezas en almacén; 0 si se omite</p>
+          </div>
+        </div>
+        <section id="producto-movs" hidden aria-labelledby="producto-movs-titulo">
+          <h3 class="dialog__seccion-titulo" id="producto-movs-titulo">Últimos movimientos</h3>
+          <ul class="list" role="list"></ul>
+        </section>
+      </div>
+      <div class="dialog__actions">
+        <button class="btn btn--text" type="button" data-cerrar>Cancelar</button>
+        <button class="btn btn--filled" type="submit" id="producto-guardar">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Diálogo: entrada / salida ===== -->
+  <dialog class="dialog" id="dlg-movimiento" aria-labelledby="dlg-mov-titulo">
+    <form class="dialog__form" id="form-movimiento" novalidate>
+      <div class="dialog__header">
+        <span class="icon dialog__icon" aria-hidden="true" id="dlg-mov-icono">download</span>
+        <h2 class="dialog__headline" id="dlg-mov-titulo">Registrar entrada</h2>
+      </div>
+      <div class="dialog__content">
+        <div class="mov-producto">
+          <div class="mov-producto__datos">
+            <p class="mov-producto__nombre" id="mov-nombre"></p>
+            <span class="codigo" id="mov-codigo"></span>
+          </div>
+          <p class="mov-producto__existencia"><strong id="mov-existencia">0</strong><span id="mov-existencia-etiqueta">en existencia</span></p>
+        </div>
+        <div class="banner banner--error" id="mov-error" role="alert" hidden>
+          <span class="icon" aria-hidden="true">error</span><span class="banner__texto"></span>
+        </div>
+        <div class="field" data-field="cantidad">
+          <div class="field__box">
+            <input class="field__input" id="f-cantidad" name="cantidad" type="number" inputmode="numeric" min="1" step="1"
+                   placeholder=" " required aria-describedby="f-cantidad-ayuda">
+            <label class="field__label" for="f-cantidad">Cantidad (piezas) *</label>
+          </div>
+          <p class="field__support" id="f-cantidad-ayuda" data-ayuda="Número entero mayor que cero"></p>
+        </div>
+        <div class="field" data-field="motivo">
+          <div class="field__box">
+            <input class="field__input" id="f-motivo" name="motivo" type="text" placeholder=" " maxlength="120"
+                   autocomplete="off" aria-describedby="f-motivo-ayuda">
+            <label class="field__label" for="f-motivo">Motivo (opcional)</label>
+          </div>
+          <p class="field__support" id="f-motivo-ayuda" data-ayuda=""></p>
+        </div>
+        <p class="mov-resultado" id="mov-resultado" aria-live="polite"></p>
+      </div>
+      <div class="dialog__actions">
+        <button class="btn btn--text" type="button" data-cerrar>Cancelar</button>
+        <button class="btn btn--filled" type="submit" id="mov-guardar">Registrar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Diálogo: confirmación ===== -->
+  <dialog class="dialog dialog--confirm" id="dlg-confirmar" role="alertdialog" aria-labelledby="dlg-conf-titulo" aria-describedby="dlg-conf-texto">
+    <form class="dialog__form" method="dialog">
+      <div class="dialog__header dialog__header--center">
+        <span class="icon dialog__icon dialog__icon--error" aria-hidden="true" id="dlg-conf-icono">delete</span>
+        <h2 class="dialog__headline" id="dlg-conf-titulo">¿Confirmar?</h2>
+      </div>
+      <div class="dialog__content"><p id="dlg-conf-texto"></p></div>
+      <div class="dialog__actions">
+        <button class="btn btn--text" type="submit" value="cancelar" autofocus>Cancelar</button>
+        <button class="btn btn--danger" type="submit" value="aceptar" id="dlg-conf-aceptar">Eliminar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Snackbar ===== -->
+  <div class="snackbar" id="snackbar" role="status" aria-live="polite" aria-atomic="true">
+    <span class="icon snackbar__icon" aria-hidden="true">check_circle</span>
+    <span class="snackbar__text"></span>
+    <button class="btn btn--text snackbar__action" type="button" hidden></button>
+    <button class="icon-btn snackbar__close" type="button" aria-label="Cerrar aviso"><span class="icon" aria-hidden="true">close</span></button>
+  </div>
+
+  <noscript>
+    <p style="padding:24px;font-family:system-ui">TecnoStock necesita JavaScript habilitado para funcionar.</p>
+  </noscript>
+</body>
+</html>

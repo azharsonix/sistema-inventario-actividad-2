@@ -72,4 +72,50 @@ class EscenariosTiendaTest extends TestCase
             array_map(fn (array $m) => [$m['tipo'], $m['cantidad'], $m['existenciaResultante'], $m['motivo']], $historial),
         );
     }
+
+    #[TestDox('CP-15 [RF-01, RF-02, RF-03, RF-04, RF-05] Proceso completo: alta, consulta, entrada, venta y reporte de resurtido de un producto nuevo')]
+    public function testProcesoCompleto(): void
+    {
+        // RF-01: la cliente da de alta el teclado; un alta con precio negativo se rechaza
+        $alta = $this->servidor->pedir('POST', '/api/productos', [
+            'codigo' => 'TEC-020', 'nombre' => 'Teclado USB', 'categoria' => 'Periféricos',
+            'precio' => 250, 'existencia' => 20, 'stockMinimo' => 5,
+        ]);
+        $this->assertSame(201, $alta['estado']);
+        $invalida = $this->servidor->pedir('POST', '/api/productos', [
+            'codigo' => 'TEC-021', 'nombre' => 'Teclado inalámbrico', 'categoria' => 'Periféricos',
+            'precio' => -250, 'existencia' => 10, 'stockMinimo' => 2,
+        ]);
+        $this->assertSame(422, $invalida['estado']);
+
+        // RF-02: lo consulta por su código
+        $consulta = $this->servidor->pedir('GET', '/api/productos/tec-020');
+        $this->assertSame(200, $consulta['estado']);
+        $this->assertSame(20, $consulta['datos']['producto']['existencia']);
+
+        // RF-04: llegan 5 piezas del proveedor
+        $entrada = $this->servidor->pedir('POST', '/api/productos/TEC-020/entradas', ['cantidad' => 5]);
+        $this->assertSame(201, $entrada['estado']);
+        $this->assertSame(25, $entrada['datos']['producto']['existencia']);
+
+        // RF-03: vende 20 piezas; después intenta vender 6 cuando solo quedan 5
+        $venta = $this->servidor->pedir('POST', '/api/productos/TEC-020/salidas', ['cantidad' => 20]);
+        $this->assertSame(201, $venta['estado']);
+        $this->assertSame(5, $venta['datos']['producto']['existencia']);
+        $excedida = $this->servidor->pedir('POST', '/api/productos/TEC-020/salidas', ['cantidad' => 6]);
+        $this->assertSame(422, $excedida['estado'], 'La venta de 6 piezas de TEC-020 (existencia 5) debía responder 422.');
+
+        // RF-05: el reporte marca TEC-020 para resurtir (5 de mínimo 5) y los totales cuadran
+        $reporte = $this->servidor->pedir('GET', '/api/reporte')['datos'];
+        $this->assertSame(['TEC-020'], $reporte['bajoStockMinimo'], 'Productos a resurtir: se esperaba TEC-020 (5 de mínimo 5).');
+        $this->assertSame(4, $reporte['totalProductos']);
+        $this->assertSame(12 + 30 + 6 + 5, $reporte['totalUnidades']);
+        $this->assertEqualsWithDelta(12 * 129 + 30 * 250 + 6 * 849 + 5 * 250, $reporte['valorTotal'], 0.001);
+
+        $historial = $this->servidor->pedir('GET', '/api/movimientos?codigo=TEC-020')['datos']['movimientos'];
+        $this->assertSame(
+            [['salida', 20, 5], ['entrada', 5, 25]],
+            array_map(fn (array $m) => [$m['tipo'], $m['cantidad'], $m['existenciaResultante']], $historial),
+        );
+    }
 }

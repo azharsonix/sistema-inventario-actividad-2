@@ -6,6 +6,7 @@ namespace Tests\Unitarias;
 
 use App\CodigoDuplicadoException;
 use App\Inventario;
+use App\InventarioException;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
@@ -41,5 +42,28 @@ class RegistroProductoTest extends TestCase
 
         $this->assertCount(1, $inventario->listarProductos());
         $this->assertSame('Laptop Lenovo', $inventario->consultarProducto('LAP-001')->nombre);
+    }
+
+    #[TestDox('CP-12 [RF-01] Registrar producto con nombre vacío, precio o existencia negativos o código inválido muestra error y no lo guarda')]
+    public function testDatosInvalidos(): void
+    {
+        $inventario = new Inventario();
+        $casos = [
+            [['TEC-020', '', 250.00, 20], 'El nombre del producto es obligatorio.'],
+            [['TEC-020', 'Teclado USB', -250.00, 20], 'El precio no puede ser negativo.'],
+            [['TEC-020', 'Teclado USB', 250.00, -5], 'La existencia y el stock mínimo no pueden ser negativos.'],
+            [['T#1', 'Teclado USB', 250.00, 20], 'El código debe tener de 3 a 20 caracteres (A-Z, 0-9 o guion).'],
+        ];
+
+        foreach ($casos as [[$codigo, $nombre, $precio, $existencia], $mensaje]) {
+            try {
+                $inventario->registrarProducto($codigo, $nombre, 'Periféricos', $precio, $existencia, 5);
+                $this->fail("Se esperaba el error «{$mensaje}».");
+            } catch (InventarioException $e) {
+                $this->assertSame($mensaje, $e->getMessage());
+            }
+        }
+
+        $this->assertCount(0, $inventario->listarProductos());
     }
 }
