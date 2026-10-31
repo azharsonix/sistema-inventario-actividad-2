@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="4" assertions="14" errors="0" failures="0" skipped="0" time="0.009684">
-    <testsuite name="Unitarias" tests="4" assertions="14" errors="0" failures="0" skipped="0" time="0.009684">
-      <testsuite name="Tests\Unitarias\RegistroProductoTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.008193">
-        <testcase name="testRegistrarProductoValido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="18" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.007595"/>
-        <testcase name="testCodigoDuplicado" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="30" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.000598"/>
+  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="5" assertions="19" errors="0" failures="0" skipped="0" time="0.005239">
+    <testsuite name="Unitarias" tests="5" assertions="19" errors="0" failures="0" skipped="0" time="0.005239">
+      <testsuite name="Tests\Unitarias\RegistroProductoTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" tests="3" assertions="11" errors="0" failures="0" skipped="0" time="0.004512">
+        <testcase name="testRegistrarProductoValido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="19" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.004101"/>
+        <testcase name="testCodigoDuplicado" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="31" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.000320"/>
+        <testcase name="testDatosInvalidos" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="48" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="5" time="0.000092"/>
       </testsuite>
-      <testsuite name="Tests\Unitarias\VentaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" tests="2" assertions="8" errors="0" failures="0" skipped="0" time="0.001491">
-        <testcase name="testVentaDescuentaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="27" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="5" time="0.000910"/>
-        <testcase name="testVentaMayorALaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="39" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="3" time="0.000581"/>
+      <testsuite name="Tests\Unitarias\VentaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" tests="2" assertions="8" errors="0" failures="0" skipped="0" time="0.000726">
+        <testcase name="testVentaDescuentaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="27" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="5" time="0.000378"/>
+        <testcase name="testVentaMayorALaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="39" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="3" time="0.000348"/>
       </testsuite>
     </testsuite>
   </testsuite>

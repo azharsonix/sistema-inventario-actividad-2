@@ -1,5 +1,5 @@
 {
-    "fecha": "2026-10-30T22:59:45-06:00",
+    "fecha": "2026-10-31T00:16:23-06:00",
     "ambiente": {
         "Sistema operativo": "Windows NT 10.0",
         "PHP": "8.4.27",
@@ -59,8 +59,8 @@
         }
     ],
     "corregido": {
-        "total": 10,
-        "aprobadas": 10
+        "total": 13,
+        "aprobadas": 13
     },
     "resultado": "Las pruebas detectan los dos defectos y pasan con el código corregido"
 }

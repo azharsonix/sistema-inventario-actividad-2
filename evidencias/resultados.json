@@ -1,6 +1,6 @@
 {
-    "ronda": "Ejecución 2026-10-30 22:59",
-    "fecha": "2026-10-30T22:59:31-06:00",
+    "ronda": "Ejecución 2026-10-31 00:54",
+    "fecha": "2026-10-31T00:54:57-06:00",
     "ambiente": {
         "Sistema operativo": "Windows NT 10.0",
         "PHP": "8.4.27",
@@ -8,11 +8,11 @@
         "Ejecutado en": "Equipo local"
     },
     "resumen": {
-        "total": 10,
-        "aprobadas": 10,
+        "total": 13,
+        "aprobadas": 13,
         "noAprobadas": 0,
         "omitidas": 0,
-        "segundos": 3.528
+        "segundos": 4.6
     },
     "porTipo": [
         {
@@ -21,21 +21,24 @@
                 "CP-01",
                 "CP-02",
                 "CP-03",
-                "CP-04"
+                "CP-04",
+                "CP-12"
             ]
         },
         {
             "tipo": "Integración",
             "casos": [
                 "CP-05",
-                "CP-06"
+                "CP-06",
+                "CP-13"
             ]
         },
         {
             "tipo": "Sistema",
             "casos": [
                 "CP-07",
-                "CP-08"
+                "CP-08",
+                "CP-11"
             ]
         },
         {
@@ -55,7 +58,7 @@
             "tipo": "Unitaria",
             "nombre": "Registrar producto con datos válidos normaliza el código y guarda la existencia inicial",
             "estado": "Aprobada",
-            "segundos": 0.008,
+            "segundos": 0.004,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\RegistroProductoTest::testRegistrarProductoValido"
         },
@@ -67,7 +70,7 @@
             "tipo": "Unitaria",
             "nombre": "Registrar producto con código duplicado muestra error y no agrega otro producto",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\RegistroProductoTest::testCodigoDuplicado"
         },
@@ -79,7 +82,7 @@
             "tipo": "Unitaria",
             "nombre": "Venta con cantidad disponible descuenta la existencia y registra el movimiento",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\VentaTest::testVentaDescuentaExistencia"
         },
@@ -91,7 +94,7 @@
             "tipo": "Unitaria",
             "nombre": "Venta mayor a la existencia se rechaza y la existencia no cambia",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\VentaTest::testVentaMayorALaExistencia"
         },
@@ -104,7 +107,7 @@
             "tipo": "Integración",
             "nombre": "Venta guardada en el archivo se conserva al volver a abrir el inventario",
             "estado": "Aprobada",
-            "segundos": 0.009,
+            "segundos": 0.001,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\VentaPersistidaTest::testVentaSeConserva"
         },
@@ -116,7 +119,7 @@
             "tipo": "Integración",
             "nombre": "Venta rechazada dentro de una actualización no modifica el archivo de datos",
             "estado": "Aprobada",
-            "segundos": 0.002,
+            "segundos": 0.001,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\VentaPersistidaTest::testVentaRechazadaNoGuarda"
         },
@@ -130,7 +133,7 @@
             "tipo": "Sistema",
             "nombre": "Registrar producto, consultarlo y venderlo por HTTP actualiza la existencia",
             "estado": "Aprobada",
-            "segundos": 0.889,
+            "segundos": 0.906,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testFlujoRegistroConsultaVenta"
         },
@@ -142,7 +145,7 @@
             "tipo": "Sistema",
             "nombre": "Ventas con cantidad cero, negativa o mayor a la existencia responden 422 y no cambian la existencia",
             "estado": "Aprobada",
-            "segundos": 0.865,
+            "segundos": 0.938,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testVentasInvalidas"
         },
@@ -154,7 +157,7 @@
             "tipo": "Aceptación",
             "nombre": "Al cierre del día el reporte lista para resurtir los productos que quedaron en o bajo su mínimo",
             "estado": "Aprobada",
-            "segundos": 0.88,
+            "segundos": 0.93,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testReporteDeResurtido"
         },
@@ -167,9 +170,45 @@
             "tipo": "Aceptación",
             "nombre": "Llega mercancía y se vende en mostrador: la consulta de existencias y el historial cuadran",
             "estado": "Aprobada",
-            "segundos": 0.872,
+            "segundos": 0.92,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testEntradaYVentaCuadran"
+        },
+        {
+            "id": "CP-11",
+            "requisitos": [
+                "RF-02"
+            ],
+            "tipo": "Sistema",
+            "nombre": "Consultar un producto que no existe responde 404 con mensaje claro y no cambia el inventario",
+            "estado": "Aprobada",
+            "segundos": 0.893,
+            "mensaje": "",
+            "prueba": "Tests\\Sistema\\ConsultaHttpTest::testProductoInexistente"
+        },
+        {
+            "id": "CP-12",
+            "requisitos": [
+                "RF-01"
+            ],
+            "tipo": "Unitaria",
+            "nombre": "Registrar producto con nombre vacío, precio o existencia negativos o código inválido muestra error y no lo guarda",
+            "estado": "Aprobada",
+            "segundos": 0,
+            "mensaje": "",
+            "prueba": "Tests\\Unitarias\\RegistroProductoTest::testDatosInvalidos"
+        },
+        {
+            "id": "CP-13",
+            "requisitos": [
+                "RF-04"
+            ],
+            "tipo": "Integración",
+            "nombre": "Entrada de mercancía guardada en el archivo suma la existencia y queda en el historial",
+            "estado": "Aprobada",
+            "segundos": 0.007,
+            "mensaje": "",
+            "prueba": "Tests\\Integracion\\EntradaPersistidaTest::testEntradaSeConserva"
         }
     ]
 }

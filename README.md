@@ -25,16 +25,16 @@ En `docs/`:
 
 | Nivel | Casos | Carpeta |
 |---|---|---|
-| Unitarias | CP-01 a CP-04 | `tests/Unitarias` |
-| Integración | CP-05 y CP-06 | `tests/Integracion` |
-| Sistema (HTTP) | CP-07 y CP-08 | `tests/Sistema` |
+| Unitarias | CP-01 a CP-04 y CP-12 | `tests/Unitarias` |
+| Integración | CP-05, CP-06 y CP-13 | `tests/Integracion` |
+| Sistema (HTTP) | CP-07, CP-08 y CP-11 | `tests/Sistema` |
 | Aceptación | CP-09 y CP-10 | `tests/Aceptacion` |
 
 ## Uso
 
 ```bash
 composer install
-composer test          # los 10 casos
+composer test          # los 13 casos
 composer evidencia     # cuatro suites + reporte en evidencias/
 composer regresion     # inyecta DEF-01 y DEF-02 y comprueba que las pruebas los detectan
 php -S localhost:8000 -t public   # API: /api/productos, /api/reporte, /salud

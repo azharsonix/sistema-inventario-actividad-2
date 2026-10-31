@@ -41,7 +41,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
 
-      - name: CP-01 a CP-04
+      - name: CP-01 a CP-04 y CP-12
         run: php scripts/ejecutar-pruebas.php --suite=Unitarias
 
       - uses: actions/upload-artifact@v4
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/preparar-php
 
-      - name: CP-05 y CP-06
+      - name: CP-05, CP-06 y CP-13
         run: php scripts/ejecutar-pruebas.php --suite=Integracion
 
       - uses: actions/upload-artifact@v4
@@ -77,7 +77,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/preparar-php
 
-      - name: CP-07 y CP-08 contra el servidor en ejecución
+      - name: CP-07, CP-08 y CP-11 contra el servidor en ejecución
         run: php scripts/ejecutar-pruebas.php --suite=Sistema
 
       - uses: actions/upload-artifact@v4
