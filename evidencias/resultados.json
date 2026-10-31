@@ -1,6 +1,6 @@
 {
-    "ronda": "Ejecución 2026-10-31 00:54",
-    "fecha": "2026-10-31T00:54:57-06:00",
+    "ronda": "Ejecución 2026-10-31 15:18",
+    "fecha": "2026-10-31T15:18:41-06:00",
     "ambiente": {
         "Sistema operativo": "Windows NT 10.0",
         "PHP": "8.4.27",
@@ -8,11 +8,11 @@
         "Ejecutado en": "Equipo local"
     },
     "resumen": {
-        "total": 13,
-        "aprobadas": 13,
+        "total": 15,
+        "aprobadas": 15,
         "noAprobadas": 0,
         "omitidas": 0,
-        "segundos": 4.6
+        "segundos": 5.304
     },
     "porTipo": [
         {
@@ -30,7 +30,8 @@
             "casos": [
                 "CP-05",
                 "CP-06",
-                "CP-13"
+                "CP-13",
+                "CP-14"
             ]
         },
         {
@@ -45,7 +46,8 @@
             "tipo": "Aceptación",
             "casos": [
                 "CP-09",
-                "CP-10"
+                "CP-10",
+                "CP-15"
             ]
         }
     ],
@@ -58,7 +60,7 @@
             "tipo": "Unitaria",
             "nombre": "Registrar producto con datos válidos normaliza el código y guarda la existencia inicial",
             "estado": "Aprobada",
-            "segundos": 0.004,
+            "segundos": 0.007,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\RegistroProductoTest::testRegistrarProductoValido"
         },
@@ -70,7 +72,7 @@
             "tipo": "Unitaria",
             "nombre": "Registrar producto con código duplicado muestra error y no agrega otro producto",
             "estado": "Aprobada",
-            "segundos": 0,
+            "segundos": 0.001,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\RegistroProductoTest::testCodigoDuplicado"
         },
@@ -82,7 +84,7 @@
             "tipo": "Unitaria",
             "nombre": "Venta con cantidad disponible descuenta la existencia y registra el movimiento",
             "estado": "Aprobada",
-            "segundos": 0,
+            "segundos": 0.001,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\VentaTest::testVentaDescuentaExistencia"
         },
@@ -94,7 +96,7 @@
             "tipo": "Unitaria",
             "nombre": "Venta mayor a la existencia se rechaza y la existencia no cambia",
             "estado": "Aprobada",
-            "segundos": 0,
+            "segundos": 0.001,
             "mensaje": "",
             "prueba": "Tests\\Unitarias\\VentaTest::testVentaMayorALaExistencia"
         },
@@ -107,7 +109,7 @@
             "tipo": "Integración",
             "nombre": "Venta guardada en el archivo se conserva al volver a abrir el inventario",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0.002,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\VentaPersistidaTest::testVentaSeConserva"
         },
@@ -119,7 +121,7 @@
             "tipo": "Integración",
             "nombre": "Venta rechazada dentro de una actualización no modifica el archivo de datos",
             "estado": "Aprobada",
-            "segundos": 0.001,
+            "segundos": 0.004,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\VentaPersistidaTest::testVentaRechazadaNoGuarda"
         },
@@ -133,7 +135,7 @@
             "tipo": "Sistema",
             "nombre": "Registrar producto, consultarlo y venderlo por HTTP actualiza la existencia",
             "estado": "Aprobada",
-            "segundos": 0.906,
+            "segundos": 0.859,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testFlujoRegistroConsultaVenta"
         },
@@ -145,7 +147,7 @@
             "tipo": "Sistema",
             "nombre": "Ventas con cantidad cero, negativa o mayor a la existencia responden 422 y no cambian la existencia",
             "estado": "Aprobada",
-            "segundos": 0.938,
+            "segundos": 0.892,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\FlujoVentaHttpTest::testVentasInvalidas"
         },
@@ -157,7 +159,7 @@
             "tipo": "Aceptación",
             "nombre": "Al cierre del día el reporte lista para resurtir los productos que quedaron en o bajo su mínimo",
             "estado": "Aprobada",
-            "segundos": 0.93,
+            "segundos": 0.894,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testReporteDeResurtido"
         },
@@ -170,7 +172,7 @@
             "tipo": "Aceptación",
             "nombre": "Llega mercancía y se vende en mostrador: la consulta de existencias y el historial cuadran",
             "estado": "Aprobada",
-            "segundos": 0.92,
+            "segundos": 0.858,
             "mensaje": "",
             "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testEntradaYVentaCuadran"
         },
@@ -182,7 +184,7 @@
             "tipo": "Sistema",
             "nombre": "Consultar un producto que no existe responde 404 con mensaje claro y no cambia el inventario",
             "estado": "Aprobada",
-            "segundos": 0.893,
+            "segundos": 0.891,
             "mensaje": "",
             "prueba": "Tests\\Sistema\\ConsultaHttpTest::testProductoInexistente"
         },
@@ -206,9 +208,37 @@
             "tipo": "Integración",
             "nombre": "Entrada de mercancía guardada en el archivo suma la existencia y queda en el historial",
             "estado": "Aprobada",
-            "segundos": 0.007,
+            "segundos": 0.002,
             "mensaje": "",
             "prueba": "Tests\\Integracion\\EntradaPersistidaTest::testEntradaSeConserva"
+        },
+        {
+            "id": "CP-14",
+            "requisitos": [
+                "RF-02"
+            ],
+            "tipo": "Integración",
+            "nombre": "Consultar un producto existente leído del archivo devuelve sus datos y su existencia sin modificar el archivo",
+            "estado": "Aprobada",
+            "segundos": 0.008,
+            "mensaje": "",
+            "prueba": "Tests\\Integracion\\ConsultaPersistidaTest::testConsultaProductoExistente"
+        },
+        {
+            "id": "CP-15",
+            "requisitos": [
+                "RF-01",
+                "RF-02",
+                "RF-03",
+                "RF-04",
+                "RF-05"
+            ],
+            "tipo": "Aceptación",
+            "nombre": "Proceso completo: alta, consulta, entrada, venta y reporte de resurtido de un producto nuevo",
+            "estado": "Aprobada",
+            "segundos": 0.884,
+            "mensaje": "",
+            "prueba": "Tests\\Aceptacion\\EscenariosTiendaTest::testProcesoCompleto"
         }
     ]
 }

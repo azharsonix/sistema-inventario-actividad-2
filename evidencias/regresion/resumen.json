@@ -1,5 +1,5 @@
 {
-    "fecha": "2026-10-31T00:16:23-06:00",
+    "fecha": "2026-10-31T15:18:47-06:00",
     "ambiente": {
         "Sistema operativo": "Windows NT 10.0",
         "PHP": "8.4.27",
@@ -15,12 +15,14 @@
             "casosEsperados": [
                 "CP-04",
                 "CP-06",
-                "CP-08"
+                "CP-08",
+                "CP-15"
             ],
             "casosFallidos": [
                 "CP-04",
                 "CP-06",
-                "CP-08"
+                "CP-08",
+                "CP-15"
             ],
             "mensajes": [
                 {
@@ -34,6 +36,10 @@
                 {
                     "id": "CP-08",
                     "mensaje": "La venta de 11 unidades de LAP-001 (existencia 10) debía responder 422."
+                },
+                {
+                    "id": "CP-15",
+                    "mensaje": "La venta de 6 piezas de TEC-020 (existencia 5) debía responder 422."
                 }
             ],
             "detectado": true
@@ -44,23 +50,29 @@
             "prioridad": "Media",
             "cambio": "src/Producto.php: `return $this->existencia <= $this->stockMinimo;` → `return $this->existencia < $this->stockMinimo;`",
             "casosEsperados": [
-                "CP-09"
+                "CP-09",
+                "CP-15"
             ],
             "casosFallidos": [
-                "CP-09"
+                "CP-09",
+                "CP-15"
             ],
             "mensajes": [
                 {
                     "id": "CP-09",
                     "mensaje": "Productos a resurtir: se esperaban ACC-002 (5 de mínimo 5) y RED-001 (4 de mínimo 4)."
+                },
+                {
+                    "id": "CP-15",
+                    "mensaje": "Productos a resurtir: se esperaba TEC-020 (5 de mínimo 5)."
                 }
             ],
             "detectado": true
         }
     ],
     "corregido": {
-        "total": 13,
-        "aprobadas": 13
+        "total": 15,
+        "aprobadas": 15
     },
     "resultado": "Las pruebas detectan los dos defectos y pasan con el código corregido"
 }

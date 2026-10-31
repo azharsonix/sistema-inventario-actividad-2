@@ -29,7 +29,7 @@ $defectos = [
         'archivo' => 'Inventario.php',
         'buscar' => 'if ($cantidad > $producto->existencia) {',
         'reemplazar' => 'if (false && $cantidad > $producto->existencia) {',
-        'esperados' => ['CP-04', 'CP-06', 'CP-08'],
+        'esperados' => ['CP-04', 'CP-06', 'CP-08', 'CP-15'],
     ],
     'DEF-02' => [
         'titulo' => 'El reporte no marca para resurtir un producto cuya existencia es igual a su stock mínimo',
@@ -37,7 +37,7 @@ $defectos = [
         'archivo' => 'Producto.php',
         'buscar' => 'return $this->existencia <= $this->stockMinimo;',
         'reemplazar' => 'return $this->existencia < $this->stockMinimo;',
-        'esperados' => ['CP-09'],
+        'esperados' => ['CP-09', 'CP-15'],
     ],
 ];
 
