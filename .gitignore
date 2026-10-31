@@ -30,3 +30,7 @@ Thumbs.db
 # Resultados de Playwright
 /test-results/
 /playwright-report/
+
+# Documentos de Word: se entregan aparte, no van en el repositorio
+*.docx
+~$*
