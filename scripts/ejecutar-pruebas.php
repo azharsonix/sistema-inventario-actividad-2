@@ -96,9 +96,8 @@ $md .= "**{$resultado['resumen']['aprobadas']} de {$resultado['resumen']['total'
     . " · {$resultado['resumen']['noAprobadas']} no aprobados · {$resultado['resumen']['segundos']} s\n\n";
 $md .= "| ID | Tipo | Requisito | Caso | Estado | Tiempo |\n|---|---|---|---|---|---|\n";
 foreach ($casos as $c) {
-    $icono = $c['estado'] === 'Aprobada' ? '✅' : '❌';
-    $md .= sprintf("| %s | %s | %s | %s | %s %s | %.3f s |\n", $c['id'], $c['tipo'], implode(', ', $c['requisitos']),
-        str_replace('|', '\|', $c['nombre']), $icono, $c['estado'], $c['segundos']);
+    $md .= sprintf("| %s | %s | %s | %s | %s | %.3f s |\n", $c['id'], $c['tipo'], implode(', ', $c['requisitos']),
+        str_replace('|', '\|', $c['nombre']), $c['estado'], $c['segundos']);
 }
 foreach (array_filter($casos, fn ($c) => $c['mensaje'] !== '') as $c) {
     $md .= "\n- **{$c['id']}**: " . str_replace("\n", ' ', $c['mensaje']);
