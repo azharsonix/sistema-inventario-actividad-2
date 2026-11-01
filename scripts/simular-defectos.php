@@ -108,7 +108,7 @@ file_put_contents("{$dir}/resumen.json", json_encode($resumen, JSON_PRETTY_PRINT
 $md = "## Regresión con defectos inyectados\n\n| Defecto | Prioridad | Casos que fallaron | Esperados | ¿Detectado? |\n|---|---|---|---|---|\n";
 foreach ($resumen['defectos'] as $d) {
     $md .= sprintf("| %s %s | %s | %s | %s | %s |\n", $d['id'], $d['titulo'], $d['prioridad'],
-        implode(', ', $d['casosFallidos']) ?: '—', implode(', ', $d['casosEsperados']), $d['detectado'] ? '✅ Sí' : '❌ No');
+        implode(', ', $d['casosFallidos']) ?: '—', implode(', ', $d['casosEsperados']), $d['detectado'] ? 'Sí' : 'No');
 }
 $md .= "\n**Código corregido:** {$aprobados} de " . count($final) . " casos aprobados.\n";
 file_put_contents("{$dir}/resumen.md", $md);
