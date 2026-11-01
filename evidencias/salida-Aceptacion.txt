@@ -1,7 +1,7 @@
 PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
 
 Runtime:       PHP 8.4.27
-Configuration: C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml
+Configuration: phpunit.xml
 
 Time: 00:02.617, Memory: 8.00 MB
 

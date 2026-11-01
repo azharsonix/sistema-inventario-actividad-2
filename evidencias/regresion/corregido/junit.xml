@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\phpunit.xml" tests="15" assertions="79" errors="0" failures="0" skipped="0" time="5.321561">
+  <testsuite name="phpunit.xml" tests="15" assertions="79" errors="0" failures="0" skipped="0" time="5.321561">
     <testsuite name="Unitarias" tests="5" assertions="19" errors="0" failures="0" skipped="0" time="0.005634">
-      <testsuite name="Tests\Unitarias\RegistroProductoTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" tests="3" assertions="11" errors="0" failures="0" skipped="0" time="0.004875">
-        <testcase name="testRegistrarProductoValido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="19" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.004431"/>
-        <testcase name="testCodigoDuplicado" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="31" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.000352"/>
-        <testcase name="testDatosInvalidos" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\RegistroProductoTest.php" line="48" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="5" time="0.000092"/>
+      <testsuite name="Tests\Unitarias\RegistroProductoTest" file="tests\Unitarias\RegistroProductoTest.php" tests="3" assertions="11" errors="0" failures="0" skipped="0" time="0.004875">
+        <testcase name="testRegistrarProductoValido" file="tests\Unitarias\RegistroProductoTest.php" line="19" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.004431"/>
+        <testcase name="testCodigoDuplicado" file="tests\Unitarias\RegistroProductoTest.php" line="31" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="3" time="0.000352"/>
+        <testcase name="testDatosInvalidos" file="tests\Unitarias\RegistroProductoTest.php" line="48" class="Tests\Unitarias\RegistroProductoTest" classname="Tests.Unitarias.RegistroProductoTest" assertions="5" time="0.000092"/>
       </testsuite>
-      <testsuite name="Tests\Unitarias\VentaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" tests="2" assertions="8" errors="0" failures="0" skipped="0" time="0.000759">
-        <testcase name="testVentaDescuentaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="27" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="5" time="0.000392"/>
-        <testcase name="testVentaMayorALaExistencia" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Unitarias\VentaTest.php" line="39" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="3" time="0.000367"/>
+      <testsuite name="Tests\Unitarias\VentaTest" file="tests\Unitarias\VentaTest.php" tests="2" assertions="8" errors="0" failures="0" skipped="0" time="0.000759">
+        <testcase name="testVentaDescuentaExistencia" file="tests\Unitarias\VentaTest.php" line="27" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="5" time="0.000392"/>
+        <testcase name="testVentaMayorALaExistencia" file="tests\Unitarias\VentaTest.php" line="39" class="Tests\Unitarias\VentaTest" classname="Tests.Unitarias.VentaTest" assertions="3" time="0.000367"/>
       </testsuite>
     </testsuite>
     <testsuite name="Integracion" tests="4" assertions="19" errors="0" failures="0" skipped="0" time="0.004000">
-      <testsuite name="Tests\Integracion\ConsultaPersistidaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\ConsultaPersistidaTest.php" tests="1" assertions="8" errors="0" failures="0" skipped="0" time="0.001418">
-        <testcase name="testConsultaProductoExistente" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\ConsultaPersistidaTest.php" line="36" class="Tests\Integracion\ConsultaPersistidaTest" classname="Tests.Integracion.ConsultaPersistidaTest" assertions="8" time="0.001418"/>
+      <testsuite name="Tests\Integracion\ConsultaPersistidaTest" file="tests\Integracion\ConsultaPersistidaTest.php" tests="1" assertions="8" errors="0" failures="0" skipped="0" time="0.001418">
+        <testcase name="testConsultaProductoExistente" file="tests\Integracion\ConsultaPersistidaTest.php" line="36" class="Tests\Integracion\ConsultaPersistidaTest" classname="Tests.Integracion.ConsultaPersistidaTest" assertions="8" time="0.001418"/>
       </testsuite>
-      <testsuite name="Tests\Integracion\EntradaPersistidaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\EntradaPersistidaTest.php" tests="1" assertions="6" errors="0" failures="0" skipped="0" time="0.000916">
-        <testcase name="testEntradaSeConserva" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\EntradaPersistidaTest.php" line="35" class="Tests\Integracion\EntradaPersistidaTest" classname="Tests.Integracion.EntradaPersistidaTest" assertions="6" time="0.000916"/>
+      <testsuite name="Tests\Integracion\EntradaPersistidaTest" file="tests\Integracion\EntradaPersistidaTest.php" tests="1" assertions="6" errors="0" failures="0" skipped="0" time="0.000916">
+        <testcase name="testEntradaSeConserva" file="tests\Integracion\EntradaPersistidaTest.php" line="35" class="Tests\Integracion\EntradaPersistidaTest" classname="Tests.Integracion.EntradaPersistidaTest" assertions="6" time="0.000916"/>
       </testsuite>
-      <testsuite name="Tests\Integracion\VentaPersistidaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.001666">
-        <testcase name="testVentaSeConserva" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="35" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="3" time="0.000847"/>
-        <testcase name="testVentaRechazadaNoGuarda" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Integracion\VentaPersistidaTest.php" line="49" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="2" time="0.000819"/>
+      <testsuite name="Tests\Integracion\VentaPersistidaTest" file="tests\Integracion\VentaPersistidaTest.php" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.001666">
+        <testcase name="testVentaSeConserva" file="tests\Integracion\VentaPersistidaTest.php" line="35" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="3" time="0.000847"/>
+        <testcase name="testVentaRechazadaNoGuarda" file="tests\Integracion\VentaPersistidaTest.php" line="49" class="Tests\Integracion\VentaPersistidaTest" classname="Tests.Integracion.VentaPersistidaTest" assertions="2" time="0.000819"/>
       </testsuite>
     </testsuite>
     <testsuite name="Sistema" tests="3" assertions="18" errors="0" failures="0" skipped="0" time="2.653984">
-      <testsuite name="Tests\Sistema\ConsultaHttpTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\ConsultaHttpTest.php" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.863143">
-        <testcase name="testProductoInexistente" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\ConsultaHttpTest.php" line="31" class="Tests\Sistema\ConsultaHttpTest" classname="Tests.Sistema.ConsultaHttpTest" assertions="3" time="0.863143"/>
+      <testsuite name="Tests\Sistema\ConsultaHttpTest" file="tests\Sistema\ConsultaHttpTest.php" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.863143">
+        <testcase name="testProductoInexistente" file="tests\Sistema\ConsultaHttpTest.php" line="31" class="Tests\Sistema\ConsultaHttpTest" classname="Tests.Sistema.ConsultaHttpTest" assertions="3" time="0.863143"/>
       </testsuite>
-      <testsuite name="Tests\Sistema\FlujoVentaHttpTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.790842">
-        <testcase name="testFlujoRegistroConsultaVenta" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="32" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="7" time="0.882214"/>
-        <testcase name="testVentasInvalidas" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Sistema\FlujoVentaHttpTest.php" line="54" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="8" time="0.908628"/>
+      <testsuite name="Tests\Sistema\FlujoVentaHttpTest" file="tests\Sistema\FlujoVentaHttpTest.php" tests="2" assertions="15" errors="0" failures="0" skipped="0" time="1.790842">
+        <testcase name="testFlujoRegistroConsultaVenta" file="tests\Sistema\FlujoVentaHttpTest.php" line="32" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="7" time="0.882214"/>
+        <testcase name="testVentasInvalidas" file="tests\Sistema\FlujoVentaHttpTest.php" line="54" class="Tests\Sistema\FlujoVentaHttpTest" classname="Tests.Sistema.FlujoVentaHttpTest" assertions="8" time="0.908628"/>
       </testsuite>
     </testsuite>
     <testsuite name="Aceptacion" tests="3" assertions="23" errors="0" failures="0" skipped="0" time="2.657943">
-      <testsuite name="Tests\Aceptacion\EscenariosTiendaTest" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" tests="3" assertions="23" errors="0" failures="0" skipped="0" time="2.657943">
-        <testcase name="testReporteDeResurtido" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="35" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="7" time="0.855989"/>
-        <testcase name="testEntradaYVentaCuadran" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="56" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="2" time="0.886027"/>
-        <testcase name="testProcesoCompleto" file="C:\Users\HAYDR4\Desktop\Hector\Tareas en equipo\Actividad 2\sistema\tests\Aceptacion\EscenariosTiendaTest.php" line="77" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="14" time="0.915927"/>
+      <testsuite name="Tests\Aceptacion\EscenariosTiendaTest" file="tests\Aceptacion\EscenariosTiendaTest.php" tests="3" assertions="23" errors="0" failures="0" skipped="0" time="2.657943">
+        <testcase name="testReporteDeResurtido" file="tests\Aceptacion\EscenariosTiendaTest.php" line="35" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="7" time="0.855989"/>
+        <testcase name="testEntradaYVentaCuadran" file="tests\Aceptacion\EscenariosTiendaTest.php" line="56" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="2" time="0.886027"/>
+        <testcase name="testProcesoCompleto" file="tests\Aceptacion\EscenariosTiendaTest.php" line="77" class="Tests\Aceptacion\EscenariosTiendaTest" classname="Tests.Aceptacion.EscenariosTiendaTest" assertions="14" time="0.915927"/>
       </testsuite>
     </testsuite>
   </testsuite>
