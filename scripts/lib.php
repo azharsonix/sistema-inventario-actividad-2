@@ -40,11 +40,30 @@ function ejecutarPhpunit(array $argumentos, string $junit, ?string $src = null, 
     fclose($tuberias[2]);
     $codigo = proc_close($proceso);
 
+    // La evidencia se sube al repositorio: rutas relativas a la raíz del proyecto, sin la carpeta local de quien la generó.
+    $salida = rutasRelativas($salida);
+    if (is_file($junit)) {
+        file_put_contents($junit, rutasRelativas((string) file_get_contents($junit)));
+    }
+
     if ($mostrar) {
         echo $salida;
     }
 
     return ['codigo' => $codigo, 'segundos' => microtime(true) - $inicio, 'salida' => $salida];
+}
+
+/**
+ * Quita la ruta absoluta de la raíz del proyecto (C:\...\sistema\ o /home/runner/.../sistema/).
+ */
+function rutasRelativas(string $texto): string
+{
+    $raiz = realpath(RAIZ);
+    if ($raiz === false) {
+        return $texto;
+    }
+
+    return str_replace([$raiz . DIRECTORY_SEPARATOR, $raiz . '/', $raiz], ['', '', '.'], $texto);
 }
 
 /**
