@@ -25,10 +25,13 @@ En `docs/`:
 
 | Nivel | Casos | Carpeta |
 |---|---|---|
-| Unitarias | CP-01 a CP-04 y CP-12 | `tests/Unitarias` |
-| Integración | CP-05, CP-06, CP-13 y CP-14 | `tests/Integracion` |
-| Sistema (HTTP) | CP-07, CP-08 y CP-11 | `tests/Sistema` |
-| Aceptación | CP-09, CP-10 y CP-15 | `tests/Aceptacion` |
+| Unitarias | CP-01 a CP-04 y CP-12 | [tests/Unitarias](tests/Unitarias) |
+| Integración | CP-05, CP-06, CP-13 y CP-14 | [tests/Integracion](tests/Integracion) |
+| Sistema (HTTP) | CP-07, CP-08 y CP-11 | [tests/Sistema](tests/Sistema) |
+| Aceptación | CP-09, CP-10 y CP-15 | [tests/Aceptacion](tests/Aceptacion) |
+| Regresión | DEF-01 y DEF-02 inyectados | [evidencias/regresion](evidencias/regresion) |
+
+Cada carpeta tiene un README con la tabla de casos y la salida de su ejecución.
 
 ## Uso
 
@@ -42,7 +45,7 @@ php -S localhost:8000 -t public   # interfaz web en http://localhost:8000/ y API
 
 ## Integración continua
 
-`.github/workflows/ci.yml` se ejecuta en cada push y Pull Request: unitarias (PHP 8.2, 8.3 y 8.4) → integración → sistema → aceptación → regresión con defectos inyectados, y un job final que junta los resultados en el resumen y en el artefacto `evidencia-pruebas`.
+`.github/workflows/ci.yml` se ejecuta en cada push y Pull Request: unitarias (PHP 8.2, 8.3 y 8.4) → integración → sistema → aceptación → regresión con defectos inyectados, y un job final que junta los resultados en el resumen y en el artefacto `evidencia-pruebas`. Cuando la ejecución es sobre `main`, el reporte HTML se publica en [GitHub Pages](https://azharsonix.github.io/sistema-inventario-actividad-2/).
 
 ## Equipo
 

@@ -4,7 +4,7 @@
 # los siguientes no corren y el PR no se puede integrar:
 #
 #   unitarias (PHP 8.2, 8.3, 8.4) ─► integracion ─► sistema ─► aceptacion ─► regresion-defectos
-#                                                                     └──────► reporte (siempre)
+#                                                                     └──────► reporte (siempre) ─► publicar-reporte (solo main)
 #
 # Cada noche se repite la suite completa (regresión programada) aunque no haya cambios.
 
@@ -148,3 +148,32 @@ jobs:
         with:
           name: evidencia-pruebas
           path: evidencias/
+
+  publicar-reporte:
+    name: Publicar reporte en GitHub Pages
+    needs: reporte
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: evidencia-pruebas
+          path: evidencias
+
+      - name: Armar el sitio con el reporte de la ejecución
+        run: |
+          mkdir -p sitio
+          cp evidencias/reporte-pruebas.html sitio/index.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio
+
+      - id: despliegue
+        uses: actions/deploy-pages@v4
